@@ -1,0 +1,7 @@
+# Obsidian 특정 파일 및 폴더 제외
+.obsidian/workspace.json
+.obsidian/plugins/s3-image-uploader/data.json
+.obsidian/cache/
+
+
+.obsidian/plugins/s3-image-uploader/data.json
