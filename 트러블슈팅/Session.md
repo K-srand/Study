@@ -20,7 +20,10 @@ application.properties에 인증서 정보 등록
 
 
 
+# Set-Cookie header was blocked because it has ”Secure" attribute ...
 
+
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/fbe99ae915cc98a50d88ed0bfab3d0ef.png)
 
 
 
