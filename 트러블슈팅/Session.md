@@ -26,5 +26,17 @@ application.properties에 인증서 정보 등록
 ![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/fbe99ae915cc98a50d88ed0bfab3d0ef.png)
 
 
+docker 볼륨에 ssl 인증키 파일 복사
 
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/72f68bb97b7b8b7c5762554f5c8572ee.png)
+
+
+
+nginx.conf에 ssl 사용 설정 등록 
+
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/4d4e2c2dce29fdeef1dd4c61ea2692d0.png)
+
+
+
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/1e8a6ceb4496ae814069097209f687a9.png)
 
