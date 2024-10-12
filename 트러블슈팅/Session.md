@@ -3,7 +3,7 @@
 
 ![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/e7f4e3f5caeaad4241afd8f3cf712657.png)
 
-
+Postman으로 확인 시 쿠키가 유지되지만 배포 환경에서 사이트 접속 시 변경됨.
 http 사용 시 메서드 간 세션 유지가 안되어 이메일 인증 번호에 null 값이 들어옴.
 -> ssl 인증서를 발급받아 https를 사용하여 해결함.
 
@@ -39,4 +39,18 @@ nginx.conf에 ssl 사용 설정 등록
 
 
 ![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/1e8a6ceb4496ae814069097209f687a9.png)
+
+
+
+이메일 인증 성공
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/ff38c0c9040e8c448cae79c30bf935ef.png)
+
+
+Set-Cookie header was blocked because it has ”Secure" attribute ... 에러가 더이상 뜨지 않음.
+
+
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/d4f812bbbbe08a0742fa70d0e6de9d9c.png)
+
+
+
 
