@@ -4,13 +4,16 @@
 ![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/e7f4e3f5caeaad4241afd8f3cf712657.png)
 
 
-http 사용 시 세션 유지가 안되어 이메일 인증 번호에 null 값이 들어옴.
+http 사용 시 메서드 간 세션 유지가 안되어 이메일 인증 번호에 null 값이 들어옴.
 -> ssl 인증서를 발급받아 https를 사용하여 해결함.
 
 
 certbot를 설치하여 ssl 인증서 발급
 
-![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/393f5150d5a1bf890a6778e3f5d875f0.png)
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/05c3b70f014933a379e5ee5f141d2e0e.png)
+
+
+
 
 
 
