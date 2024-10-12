@@ -14,6 +14,12 @@ certbot를 설치하여 ssl 인증서 발급
 
 
 
+application.properties에 인증서 정보 등록
+
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/77b3131a6b70dc7b6baf205e38c6db99.png)
+
+
+
 
 
 
