@@ -2,6 +2,7 @@ csrf 활성화로  post 요청이 404 error가 발생하는 경우
 
 -> 임시로 csrf를 비활성화시켜 테스트를 진행해볼 수 있다.
 http.csrf(csrf -> csrf.disable());
+또는 .csrf(AbstractHttpConfigurer::disable)
 
 그러나 실제 배포 환경에서까지 csrf 비활성화를 할 수는 없기 때문에 다른 방법이 필요하다.
 
