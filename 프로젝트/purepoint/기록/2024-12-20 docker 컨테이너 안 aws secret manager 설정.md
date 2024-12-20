@@ -50,7 +50,6 @@ ENTRYPOINT ["java", "-jar", "/app/spring-app.jar"]
 ```
 
 <h3>docker-compose.yaml 설정</h3>
-⚠️ aws secret manager
 ```
 version: '3.8'
 
@@ -81,11 +80,6 @@ services:
     container_name: springboot-app
     ports:
       - "8080:8080"
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mariadb://{DB컨테이너명}:3306/{스키마명}
-      - SPRING_DATASOURCE_USERNAME= DB 계정
-      - SPRING_DATASOURCE_PASSWORD= DB 패스워드
-      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.mariadb.jdbc.Driver
     depends_on:
       - maria-db-main
       - redis
@@ -94,4 +88,14 @@ volumes:
   mariadb-data:
   redis-data:
 ```
+
+❌에러 시 참고사항
+
+
+environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://{DB컨테이너명}:3306/{스키마명}
+      - SPRING_DATASOURCE_USERNAME= DB 계정
+      - SPRING_DATASOURCE_PASSWORD= DB 패스워드
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.mariadb.jdbc.Driver
+
 
