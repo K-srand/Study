@@ -1,6 +1,8 @@
 aws secret manager 사용을 위해 awscli를 설치하고 aws configure로 secret key 설정이 필요합니다.
 하지만 docker 빌드 시 configure 명령어를 사용하여 환경변수를 설정할 수 없습니다.
 
+
+
 따라서 미리 .aws 폴더를 만들고 그 안에 config와 credentials 파일을 만들어 환경변수 값을 저장하고, docker 빌드 시 .aws 폴더를 copy 해주었습니다.
 
 <h3>.aws 폴더 안 config, credentials 설정</h3>
