@@ -91,11 +91,18 @@ volumes:
 
 ❌에러 시 참고사항
 
-
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/f656b7a06a47b8d45d6be008dfacef11.png)
+docker-compose로 컨테이너 실행 시 spring datasource url은 localhost를 인식하지 못합니다.
+따라서 docker-compose의 DB 컨테이너명와 동일하게 작성해주었습니다.
+aws secret manager 환경변수 값을 수정하거나 아래와 같이 임의로 docker-compose springboot 프로젝트 부분에 환경변수를 명시해줌으로써 덮어쓰기하는 방법이 있습니다.
+```
+ex)
 environment:
       - SPRING_DATASOURCE_URL=jdbc:mariadb://{DB컨테이너명}:3306/{스키마명}
       - SPRING_DATASOURCE_USERNAME= DB 계정
       - SPRING_DATASOURCE_PASSWORD= DB 패스워드
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.mariadb.jdbc.Driver
+```
+
 
 
