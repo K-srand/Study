@@ -4,11 +4,9 @@ aws secret manager 사용을 위해 awscli를 설치하고 aws configure로 secr
 따라서 미리 .aws 폴더를 만들고 그 안에 config와 credentials 파일을 만들어 환경변수 값을 저장하고, docker 빌드 시 .aws 폴더를 copy 해주어야한다.
 
 
-
-```
 dockerfile
 
-
+```
 # 베이스 이미지 설정 (JDK 17)
 FROM openjdk:17-jdk-slim
 
