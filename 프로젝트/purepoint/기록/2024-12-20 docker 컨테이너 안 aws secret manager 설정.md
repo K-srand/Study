@@ -57,10 +57,10 @@ services:
   maria-db-main:
     image: mariadb:10.9
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root 계정 패스워드
       MYSQL_DATABASE: purepoint
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: 사용자 계정
+      MYSQL_PASSWORD: 사용자 패스워드
     ports:
       - "3306:3306"
     volumes:
