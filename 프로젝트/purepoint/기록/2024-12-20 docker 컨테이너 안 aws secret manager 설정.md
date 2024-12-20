@@ -1,7 +1,8 @@
 aws secret manager 사용을 위해 awscli를 설치하고 aws configure로 secret key 설정이 필요합니다.
 하지만 docker 빌드 시 configure 명령어를 사용하여 환경변수를 설정할 수 없습니다.
 
-
+[이슈]
+`ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter -- *************************** APPLICATION FAILED TO START *************************** Description: Config data resource '[AwsSecretsManagerConfigDataResource@38600b context = 'dev/purepoint', optional = false]' via location 'aws-secretsmanager:dev/purepoint' does not exist Action: Check that the value 'aws-secretsmanager:dev/purepoint' at class path resource [application.properties] from spring-app.jar - 4:22 is correct, or prefix it with 'optional:'`
 
 따라서 미리 .aws 폴더를 만들고 그 안에 config와 credentials 파일을 만들어 환경변수 값을 저장하고, docker 빌드 시 .aws 폴더를 copy 해주었습니다.
 
@@ -93,9 +94,12 @@ volumes:
 
 ❌에러 시 참고사항
 
-![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/f656b7a06a47b8d45d6be008dfacef11.png)
+[이슈]
+`org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC fail to connect to host:address=(host=localhost)(port=3306)(type=primary). Conn/a]`
 docker-compose로 컨테이너 실행 시 spring datasource url은 localhost를 인식하지 못합니다.
-따라서 docker-compose의 DB 컨테이너명와 동일하게 작성해주었습니다.
+
+[해결방법]
+docker-compose의 DB 컨테이너명와 동일하게 작성해주었습니다.
 aws secret manager 환경변수 값을 수정하거나 아래와 같이 임의로 docker-compose springboot 프로젝트 부분에 환경변수를 명시해줌으로써 덮어쓰기하는 방법이 있습니다.
 ```
 ex)
