@@ -3,7 +3,23 @@ aws secret manager 사용을 위해 awscli를 설치하고 aws configure로 secr
 
 따라서 미리 .aws 폴더를 만들고 그 안에 config와 credentials 파일을 만들어 환경변수 값을 저장하고, docker 빌드 시 .aws 폴더를 copy 해주어야한다.
 
+<h3>.aws 폴더 안 config, credentials 설정</h3>
 
+.aws/config
+```
+[default]
+region = ap-northeast-2
+output = json
+```
+
+.aws/credentials
+```
+[default]
+aws_access_key_id = aws access key 값
+aws_secret_access_key = aws secret access key 값
+```
+
+<h3>dockerfile 설정</h3>
 dockerfile
 
 ```
@@ -33,3 +49,47 @@ ENTRYPOINT ["java", "-jar", "/app/spring-app.jar"]
 
 ```
 
+<h3>docker-compose.yaml 설정</h3>
+```
+version: '3.8'
+
+services:
+  maria-db-main:
+    image: mariadb:10.9
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: purepoint
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+
+  redis:
+    image: redis:7.4.1
+    container_name: springboot-purepoint-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+  springboot-app:
+    build: .
+    container_name: springboot-app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://maria-db-main:3306/purepoint
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.mariadb.jdbc.Driver
+    depends_on:
+      - maria-db-main
+      - redis
+
+volumes:
+  mariadb-data:
+  redis-data:
+```
