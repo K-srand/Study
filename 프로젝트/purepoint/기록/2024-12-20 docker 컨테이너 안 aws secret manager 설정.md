@@ -4,7 +4,7 @@ aws secret manager 사용을 위해 awscli를 설치하고 aws configure로 secr
 
 `ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter -- *************************** APPLICATION FAILED TO START *************************** Description: Config data resource '[AwsSecretsManagerConfigDataResource@38600b context = 'dev/purepoint', optional = false]' via location 'aws-secretsmanager:dev/purepoint' does not exist Action: Check that the value 'aws-secretsmanager:dev/purepoint' at class path resource [application.properties] from spring-app.jar - 4:22 is correct, or prefix it with 'optional:'`
 
-
+aws cli는 기본적으로 `~/.aws` 디렉터리에서 `config`와 `credentials` 파일을 읽어 자격 증명 및 설정을 가져옵니다. 이 파일들은 aws cli가 접근할 수 있도록 설정되어 있으며, aws cli를 통해 여러 프로필을 설정하거나 기본값을 설정하는 데 사용됩니다.
 
 따라서 미리 .aws 폴더를 만들고 그 안에 config와 credentials 파일을 만들어 환경변수 값을 저장하고, docker 빌드 시 .aws 폴더를 copy 해주었습니다.
 
