@@ -110,6 +110,3 @@ environment:
       - SPRING_DATASOURCE_PASSWORD= DB 패스워드
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.mariadb.jdbc.Driver
 ```
-
-
-
