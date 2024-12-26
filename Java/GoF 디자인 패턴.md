@@ -201,6 +201,29 @@ class Circle extends Shape {
 }
 ```
 
+### 구조 패턴: Composite
+
+목적:
+객체를 트리 구조로 구성하여 단일 객체와 복합 객체를 동일하게 처리
+
+```
+interface Component { void render(); }
+
+class Leaf implements Component {
+    public void render() { System.out.println("Rendering Leaf"); }
+}
+
+class Composite implements Component {
+    private List<Component> children = new ArrayList<>();
+
+    void add(Component component) { children.add(component); }
+    public void render() {
+        for (Component child : children) child.render();
+    }
+}
+```
+
+
 ### 행위 패턴: Observer
 
 목적:
