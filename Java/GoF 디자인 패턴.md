@@ -243,7 +243,25 @@ class MilkDecorator implements Beverage {
 }
 ```
 
+### 구조 패턴: Facade
 
+목적:
+복잡한 서브 시스템에 대한 단순화된 인터페이스 제공
+
+```
+class SubsystemA { void operationA() { System.out.println("Subsystem A Operation"); } }
+class SubsystemB { void operationB() { System.out.println("Subsystem B Operation"); } }
+
+class Facade {
+    private SubsystemA a = new SubsystemA();
+    private SubsystemB b = new SubsystemB();
+
+    void operation() {
+        a.operationA();
+        b.operationB();
+    }
+}
+```
 ### 행위 패턴: Observer
 
 목적:
