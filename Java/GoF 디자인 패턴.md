@@ -177,6 +177,30 @@ public class Main {
 }
 ```
 
+### 구조 패턴: Bridge
+
+목적:
+추상화와 구현을 분리하여 독립적으로 확장 가능하게 함.
+
+```
+interface Color { String fill(); }
+class Red implements Color { public String fill() { return "Red"; } }
+
+abstract class Shape {
+    protected Color color;
+
+    Shape(Color color) { this.color = color; }
+
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    Circle(Color color) { super(color); }
+
+    void draw() { System.out.println("Drawing Circle with " + color.fill()); }
+}
+```
+
 ### 행위 패턴: Observer
 
 목적:
