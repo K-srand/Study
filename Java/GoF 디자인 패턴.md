@@ -223,6 +223,26 @@ class Composite implements Component {
 }
 ```
 
+### 구조 패턴: Decorator
+
+목적:
+객체에 동적으로 새로운 기능을 추가함.
+
+```
+interface Beverage { String getDescription(); }
+class Coffee implements Beverage {
+    public String getDescription() { return "Coffee"; }
+}
+
+class MilkDecorator implements Beverage {
+    private Beverage beverage;
+
+    MilkDecorator(Beverage beverage) { this.beverage = beverage; }
+
+    public String getDescription() { return beverage.getDescription() + ", Milk"; }
+}
+```
+
 
 ### 행위 패턴: Observer
 
