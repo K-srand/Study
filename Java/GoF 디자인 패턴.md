@@ -63,6 +63,34 @@ class CreatorB extends Creator {
 
 ```
 
+### 생성 패턴: Abstract Factory
+
+목적:
+관련 객체 군을 생성하기 위한 인터페이스 제공
+
+```
+interface Chair { void sitOn(); }
+interface Table { void use(); }
+
+class ModernChair implements Chair {
+    public void sitOn() { System.out.println("Sitting on Modern Chair"); }
+}
+
+class VictorianChair implements Chair {
+    public void sitOn() { System.out.println("Sitting on Victorian Chair"); }
+}
+
+interface FurnitureFactory {
+    Chair createChair();
+    Table createTable();
+}
+
+class ModernFurnitureFactory implements FurnitureFactory {
+    public Chair createChair() { return new ModernChair(); }
+    public Table createTable() { return null; } // Table 생략
+}
+```
+
 
 ### 구조 패턴: Adapter
 
