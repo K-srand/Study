@@ -279,6 +279,27 @@ class Flyweight {
     }
 }
 ```
+
+### 구조 패턴: Proxy
+
+목적:
+객체에 접근을 제어하는 대리인을 제공함.
+
+```
+interface Service { void request(); }
+class RealService implements Service {
+    public void request() { System.out.println("Real Service"); }
+}
+
+class ProxyService implements Service {
+    private RealService realService;
+
+    public void request() {
+        if (realService == null) realService = new RealService();
+        realService.request();
+    }
+}
+```
 ### 행위 패턴: Observer
 
 목적:
