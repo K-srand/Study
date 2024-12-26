@@ -19,8 +19,7 @@ public class Singleton {
         return instance;
     }
 }
-```
-```
+
 public class Main {
     public static void main(String[] args) {
         Singleton singleton1 = Singleton.getInstance();
@@ -69,6 +68,68 @@ public class Main {
         OldSystem oldSystem = new OldSystem();
         NewSystem adapter = new Adapter(oldSystem);
         adapter.newMethod(); // "Old method" 출력
+    }
+}
+```
+
+<h3> 3. 행위 패턴: Observer </h3>
+
+목적:
+객체 간 일대다 관계를 정의하여 한 객체의 상태 변경 시 관련된 다른 객체들이 자동으로 업데이트되도록 함.
+
+```
+import java.util.ArrayList;
+import java.util.List;
+
+// 옵저버 인터페이스
+interface Observer {
+    void update(String message);
+}
+
+// 구독 가능한 주체
+class Subject {
+    private List<Observer> observers = new ArrayList<>();
+
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
+        }
+    }
+}
+
+// 구독자 클래스
+class Subscriber implements Observer {
+    private String name;
+
+    public Subscriber(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void update(String message) {
+        System.out.println(name + " received: " + message);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Subject subject = new Subject();
+
+        Observer subscriber1 = new Subscriber("Subscriber 1");
+        Observer subscriber2 = new Subscriber("Subscriber 2");
+
+        subject.addObserver(subscriber1);
+        subject.addObserver(subscriber2);
+
+        subject.notifyObservers("New event occurred!");
     }
 }
 ```
