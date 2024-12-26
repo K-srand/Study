@@ -24,6 +24,7 @@ toLowerCase(), toUpperCase()
 trim()
 concat()
 
+CharSequence는 String, Stringbuilder의 상위 타입. 문자열을 처리하는 다양한 객체를 받을 수 있음.
 <h3>String 비교 </h3>
 `==` : 동일성
 `equals()` : 동등성
@@ -72,7 +73,6 @@ String은 불변 객체임. 따라서 사이드 이펙트 문제가 발생하지
 
 StrinbBuilder는 보통 문자열을 변경하는 동안만 사용하다가 문자열 변경이 끝나면 안전한(불변) String으로 변환하는 것이 좋음.
 
-CharSequence는 String, Stringbuilder의 상위 타입. 문자열을 처리하는 다양한 객체를 받을 수 있음.
 <h3> String 변수 최적화 </h3>
 String result = str1 + str2
 
