@@ -72,3 +72,14 @@ String은 불변 객체임. 따라서 사이드 이펙트 문제가 발생하지
 
 StrinbBuilder는 보통 문자열을 변경하는 동안만 사용하다가 문자열 변경이 끝나면 안전한(불변) String으로 변환하는 것이 좋음.
 
+<h3> String 변수 최적화 </h3>
+String result = str1 + str2
+
+-> String result = new StringBuilder().append(str1).append(str2).toString();
+(자바 9부터는 StringConcatFactory를 사용해서 최적화 수행)
+
+자바가 최적화를 처리해주기 때문에 간단한 경우 StringBuilder 사용하지 않아도 됨.
+대신 문자열 더하기 연산(+)을 사용하면 충분함.
+
+
+
