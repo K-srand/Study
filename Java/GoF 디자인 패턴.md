@@ -262,6 +262,23 @@ class Facade {
     }
 }
 ```
+
+### 구조 패턴: Flyweight
+
+목적:
+공유 가능한 객체를 재사용하여 메모리를 절약함.
+
+```
+class Flyweight {
+    private String intrinsicState;
+
+    Flyweight(String state) { this.intrinsicState = state; }
+
+    void operation(String extrinsicState) {
+        System.out.println("Intrinsic: " + intrinsicState + ", Extrinsic: " + extrinsicState);
+    }
+}
+```
 ### 행위 패턴: Observer
 
 목적:
