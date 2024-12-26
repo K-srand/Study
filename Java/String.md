@@ -28,3 +28,15 @@ concat()
 `==` : 동일성
 `equals()` : 동등성
 
+ex)
+String str1 = new String("hello");
+String str2 = new String("hello");
+
+str1 == str2의 결과는 false
+str1.equals(str2)의 결과는 true
+
+String str1 = "hello";
+String str2 = "hello";
+
+str1 == str2와 str1.equals(str2) 둘 다 true
+왜 동일성 비교도 true인가? 
