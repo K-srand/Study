@@ -24,3 +24,7 @@ toLowerCase(), toUpperCase()
 trim()
 concat()
 
+<h3>String 비교 </h3>
+`==` : 동일성
+`equals()` : 동등성
+
