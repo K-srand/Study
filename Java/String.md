@@ -52,3 +52,6 @@ str1 == str2와 str1.equals(str2) 둘 다 true
 
 문자열 비교는 항상 equals를 사용해서 동등성 비교하는 것을 지향
 
+String은 불변 객체다.
+
+
