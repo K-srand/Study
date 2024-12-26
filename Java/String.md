@@ -52,6 +52,7 @@ str1 == str2와 str1.equals(str2) 둘 다 true
 
 문자열 비교는 항상 equals를 사용해서 동등성 비교하는 것을 지향
 
-String은 불변 객체다.
+String은 불변 객체임. 따라서 사이드 이펙트 문제가 발생하지 않음.
+
 
 
