@@ -1,4 +1,4 @@
-<h3> 1. 생성 패턴: Singleton </h3>
+### 생성 패턴: Singleton
    
 목적:
 클래스의 인스턴스를 하나로 제한하고, 전역으로 접근할 수 있는 방법 제공
@@ -31,7 +31,40 @@ public class Main {
 ```
 
 
-<h3> 2. 구조 패턴: Adapter </h3>
+### 생성 패턴: Factory Method
+
+목적:
+객체 생성을 서브클래스에 위임.
+
+```
+abstract class Product {
+    abstract void use();
+}
+
+class ConcreteProductA extends Product {
+    void use() { System.out.println("Product A"); }
+}
+
+class ConcreteProductB extends Product {
+    void use() { System.out.println("Product B"); }
+}
+
+abstract class Creator {
+    abstract Product factoryMethod();
+}
+
+class CreatorA extends Creator {
+    Product factoryMethod() { return new ConcreteProductA(); }
+}
+
+class CreatorB extends Creator {
+    Product factoryMethod() { return new ConcreteProductB(); }
+}
+
+```
+
+
+### 구조 패턴: Adapter
 
 목적: 
 호환되지 않는 인터페이스를 변환해, 기존 코드와 새 코드 간의 협력을 가능하게 함.
@@ -72,7 +105,7 @@ public class Main {
 }
 ```
 
-<h3> 3. 행위 패턴: Observer </h3>
+### 행위 패턴: Observer
 
 목적:
 객체 간 일대다 관계를 정의하여 한 객체의 상태 변경 시 관련된 다른 객체들이 자동으로 업데이트되도록 함.
