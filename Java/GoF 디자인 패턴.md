@@ -118,6 +118,24 @@ class House {
 }
 ```
 
+### 생성 패턴: Prototype
+
+목적:
+기존 객체를 복제하여 새로운 객체 생성
+
+```
+class Prototype implements Cloneable {
+    String field;
+
+    Prototype(String field) { this.field = field; }
+
+    public Prototype clone() {
+        try { return (Prototype) super.clone(); }
+        catch (CloneNotSupportedException e) { return null; }
+    }
+}
+```
+
 ### 구조 패턴: Adapter
 
 목적: 
