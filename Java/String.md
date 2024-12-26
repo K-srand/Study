@@ -93,3 +93,13 @@ StringBuilder vs StringBuffer
 StringBuilder와 똑같은 기능을 수행하는 StringBuffer 클래스도 있음.
 StringBuffer는 내부에 동기화가 되어 있어, 멀티 스레드 상황에 안전. 동기화 오버헤드로 인해 성능 느림.
 StringBuilder는 멀티 쓰레드 상황에 안전하지 않지만 동기화 오버헤드가 없으므로 속도 빠름.
+
+
+<h3> 메서드 체이닝 </h3>
+메서드 호출의 결과로 자기 자신의 참조값을 반환하면, 반환된 참조값을 사용해서 메서드 호출을 이어갈 수 있음. 
+ex) adder.add(1).add(2).add(3).getValue()
+.을 찍고 메서드를 계속 연결해서 사용함. 메서드가 체인으로 연결된 것처럼 보임.
+
+코드를 간결하고 읽기 쉽게 한다는 장점이 있음.
+
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/706096512c25e5dd3d307ea15d8ecffc.png)
