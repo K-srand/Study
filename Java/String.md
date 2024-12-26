@@ -39,4 +39,9 @@ String str1 = "hello";
 String str2 = "hello";
 
 str1 == str2와 str1.equals(str2) 둘 다 true
-왜 동일성 비교도 true인가? 
+왜 동일성 비교도 true인가? 문자열 풀에 처음 hello 만들어두고, 그 다음에 똑같은 문자열이 들어오면 만들지 않음.
+
+-> 문자열 풀 덕분에 같은 문자를 사용하는 경우 메모리 사용을 줄이고 문자를 만드는 시간도 줄어듦.
+
+
+
