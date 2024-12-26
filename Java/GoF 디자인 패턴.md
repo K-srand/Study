@@ -92,6 +92,32 @@ class ModernFurnitureFactory implements FurnitureFactory {
 ```
 
 
+### 생성 패턴: Builder
+
+목적:
+객체의 생성 과정을 단계별로 정의하고, 최종적으로 복합 객체를 만듦.
+
+```
+class House {
+    private String foundation;
+    private String structure;
+
+    static class Builder {
+        private String foundation;
+        private String structure;
+
+        Builder setFoundation(String foundation) { this.foundation = foundation; return this; }
+        Builder setStructure(String structure) { this.structure = structure; return this; }
+        House build() { return new House(this); }
+    }
+
+    private House(Builder builder) {
+        this.foundation = builder.foundation;
+        this.structure = builder.structure;
+    }
+}
+```
+
 ### 구조 패턴: Adapter
 
 목적: 
