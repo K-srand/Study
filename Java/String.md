@@ -64,5 +64,9 @@ String은 불변 객체임. 따라서 사이드 이펙트 문제가 발생하지
 내부의 값을 바로 변경하면 되기 때문에 새로운 객체를 생성할 필요 X
 가변의 경우 사이드 이펙트에 주의해서 사용해야함.
 
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/cb6fd45d8894d0fa352d28098beaac7b.png)
 
+![image](https://sj-obsidian-bucket.s3.ap-northeast-2.amazonaws.com/aa8f4ccb8d544e112546d542cf07f429.png)
+
+(java 9 이후)
 
