@@ -2,6 +2,8 @@
 .obsidian/workspace.json
 .obsidian/plugins/s3-image-uploader/data.json
 .obsidian/cache/
+.obsidian
+.gitignore
 
 DB/SQLD 준비.md
 DB/예상문제1회
