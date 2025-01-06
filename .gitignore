@@ -1,8 +1,5 @@
 # Obsidian 특정 파일 및 폴더 제외
-.obsidian/workspace.json
-.obsidian/plugins/s3-image-uploader/data.json
-.obsidian/cache/
-.obsidian
+.obsidian/*
 .gitignore
 
 DB/SQLD 준비.md
@@ -24,5 +21,5 @@ DB/복원문제/54회.md
 DB/복원문제/시험대비.md
 DB/예상문제5회
 DB/예상문제5회/예상문제5회 풀이.md
-공부할것
-공부할것/무제 파일.md
+
+공부할것/*
